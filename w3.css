@@ -237,7 +237,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   display: block;
   animation: letters, blink .5s step-end alternate;
   animation-fill-mode: forwards;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
   border-right: 3px solid;
   opacity: 0;
