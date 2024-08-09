@@ -233,31 +233,27 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-border-dark-grey,.w3-hover-border-dark-grey:hover,.w3-border-dark-gray,.w3-hover-border-dark-gray:hover{border-color:#616161!important}
 .w3-border-pale-red,.w3-hover-border-pale-red:hover{border-color:#ffe7e7!important}.w3-border-pale-green,.w3-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .w3-border-pale-yellow,.w3-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.w3-border-pale-blue,.w3-hover-border-pale-blue:hover{border-color:#e7ffff!important}
-.wrapper {
-  height: 32px;
-  /*This part is important for centering*/
-  display: grid;
-  place-items: center;
-}
-
-.typing-demo {
-  width: 22ch;
-  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+.typing-effect {
+  display: block;
+  animation: letters, blink .5s step-end alternate;
+  animation-fill-mode: forwards;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
+  opacity: 0;
   font-family: monospace;
-  font-size: 32px;
 }
 
-@keyframes typing {
-  from {
-    width: 0
+@keyframes letters {
+  0% {
+    width: 0;
+    opacity: 1;
   }
-}
-    
-@keyframes blink {
-  50% {
-    border-color: transparent
+  99% {
+    border-color: #888;
+  }
+  100% {
+    opacity: 1;
+    border-color: transparent;
   }
 }
