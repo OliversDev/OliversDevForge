@@ -242,6 +242,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   border-right: 3px solid;
   opacity: 0;
   font-family: monospace;
+  margin:16px!important;
 }
 
 @keyframes letters {
