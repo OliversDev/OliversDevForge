@@ -247,7 +247,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   overflow: hidden;
   border-right: 3px solid;
   font-family: monospace;
-  font-size: 2em;
+  font-size: 64px;
 }
 
 @keyframes typing {
