@@ -239,10 +239,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     font-family: monospace; /* Monospace font for typewriter effect */
     white-space: pre-wrap; /* Allows text to wrap */
     overflow: hidden; /* Hides overflow */
-    color: white; /* Text color */
+    color: black; /* Text color */
     font-size: 64px; /* Text size */
     line-height: 1.2; /* Line height for better readability */
-    background-color: black; /* Background color to make white text stand out */
+    /* background-color: black; Background color to make white text stand out */
     padding: 10px; /* Optional padding */
     box-sizing: border-box; /* Ensures padding is included in element's total width and height */
     position: relative; /* Allows for absolute positioning of the cursor */
@@ -256,7 +256,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     top: 0;
     height: 100%;
     width: 2px; /* Width of the cursor */
-    background-color: white; /* Cursor color */
+    background-color: black; /* Cursor color */
     animation: blink-caret 0.75s step-end infinite; /* Blinking effect */
 }
 
