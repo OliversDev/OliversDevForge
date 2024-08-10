@@ -233,28 +233,32 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-border-dark-grey,.w3-hover-border-dark-grey:hover,.w3-border-dark-gray,.w3-hover-border-dark-gray:hover{border-color:#616161!important}
 .w3-border-pale-red,.w3-hover-border-pale-red:hover{border-color:#ffe7e7!important}.w3-border-pale-green,.w3-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .w3-border-pale-yellow,.w3-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.w3-border-pale-blue,.w3-hover-border-pale-blue:hover{border-color:#e7ffff!important}
-.typing-effect {
-  display: block;
-  animation: letters, blink .5s step-end alternate;
-  animation-fill-mode: forwards;
-  white-space: normal;
-  overflow: hidden;
-  border-right: 3px solid;
-  opacity: 0;
+body {
   font-family: monospace;
-  margin:16px!important;
+  font-weight: 700;
+  font-size:50px;
+  padding:20px;
+  background:#005F6B;
+  color:#00DFFC
 }
 
-@keyframes letters {
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-  99% {
-    border-color: #888;
-  }
-  100% {
-    opacity: 1;
-    border-color: transparent;
-  }
+.type {
+  color:#0000;
+  background:
+    linear-gradient(-90deg,#00DFFC 5px,#0000 0) 10px 0,
+    linear-gradient(#00DFFC 0 0) 0 0;
+  background-size:calc(var(--n)*1ch) 200%;
+  -webkit-background-clip:padding-box,text;
+  background-clip:padding-box,text;
+  background-repeat:no-repeat;
+  animation: 
+   b .7s infinite steps(1),   
+   t calc(var(--n)*.3s) steps(var(--n)) forwards;
+}
+
+@keyframes t{
+  from {background-size:0 200%}
+}
+@keyframes b{
+  50% {background-position:0 -100%,0 0}
 }
