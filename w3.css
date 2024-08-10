@@ -233,27 +233,42 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-border-dark-grey,.w3-hover-border-dark-grey:hover,.w3-border-dark-gray,.w3-hover-border-dark-gray:hover{border-color:#616161!important}
 .w3-border-pale-red,.w3-hover-border-pale-red:hover{border-color:#ffe7e7!important}.w3-border-pale-green,.w3-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .w3-border-pale-yellow,.w3-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.w3-border-pale-blue,.w3-hover-border-pale-blue:hover{border-color:#e7ffff!important}
-.typewrite {
-  font-family: monospace;
-  font-weight: 700;
-  font-size:64px;
-  padding:20px;
-  color:#0000;
-  background:
-    linear-gradient(-90deg,#000000 5px,#0000 0) 10px 0,
-    linear-gradient(#000000 0 0) 0 0;
-  background-size:calc(var(--n)*1ch) 200%;
-  -webkit-background-clip:padding-box,text;
-  background-clip:padding-box,text;
-  background-repeat:no-repeat;
-  animation: 
-   b .7s infinite steps(1),   
-   t calc(var(--n)*.3s) steps(var(--n)) forwards;
+/* Container for the typewriter effect */
+.typewriter {
+    display: inline-block;
+    font-family: monospace; /* Monospace font for typewriter effect */
+    white-space: pre-wrap; /* Allows text to wrap */
+    overflow: hidden; /* Hides overflow */
+    color: white; /* Text color */
+    font-size: 64px; /* Text size */
+    line-height: 1.2; /* Line height for better readability */
+    background-color: black; /* Background color to make white text stand out */
+    padding: 10px; /* Optional padding */
+    box-sizing: border-box; /* Ensures padding is included in element's total width and height */
+    position: relative; /* Allows for absolute positioning of the cursor */
+    max-width: 100%; /* Ensures text wraps within container */
+}
+/* Blinking cursor effect */
+.typewriter::after {
+    content: ''; /* Empty content for the cursor */
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2px; /* Width of the cursor */
+    background-color: white; /* Cursor color */
+    animation: blink-caret 0.75s step-end infinite; /* Blinking effect */
 }
 
-@keyframes t{
-  from {background-size:0 200%}
+/* Blinking cursor animation */
+@keyframes blink-caret {
+    from, to { background-color: transparent; }
+    50% { background-color: white; }
 }
-@keyframes b{
-  50% {background-position:0 -100%,0 0}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .typewriter {
+        font-size: 32px; /* Adjust text size for smaller screens */
+    }
 }
