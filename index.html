@@ -54,18 +54,70 @@ body {background-color: #000000;}
     background-color: #121212;
     color: #ffffff;
 }
-/* Toggle button styles */
-.theme-toggle-button {
-    cursor: pointer;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #ffffff;
-    font-size: 16px;
+
+/* Slider switch styles */
+.theme-switch {
+    display: flex;
+    align-items: center;
     margin: 20px;
 }
-.theme-toggle-button:hover {background-color: #0056b3;}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.slider .slider-round {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider .slider-round:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider .slider-round {
+    background-color: #007bff;
+}
+
+input:checked + .slider .slider-round:before {
+    transform: translateX(26px);
+}
+
+/* Optional: style the label */
+.theme-switch label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-switch span {
+    margin-left: 10px;
+    font-size: 16px;
+}
 </style>
 </head>
 <body class="dark-theme">
@@ -78,7 +130,13 @@ body {background-color: #000000;}
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Programs</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-    <button class="theme-toggle-button" onclick="toggleTheme()">Toggle Theme</button>
+    <div class="theme-switch">
+        <label for="theme-toggle">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider slider-round"></span>
+            <span>Toggle Theme</span>
+        </label>
+    </div>
   </div>
 
   <!-- Navbar on small screens -->
@@ -86,7 +144,13 @@ body {background-color: #000000;}
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Programs</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-    <button class="theme-toggle-button" onclick="toggleTheme()">Toggle Theme</button>
+    <div class="theme-switch">
+        <label for="theme-toggle">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider slider-round"></span>
+            <span>Toggle Theme</span>
+        </label>
+    </div>
   </div>
 </div>
 
@@ -154,18 +218,18 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
-
-// Used to toggle theme
-function toggleTheme() {
-    const body = document.body;
-    if (body.classList.contains('light-theme')) {
-        body.classList.remove('light-theme');
-        body.classList.add('dark-theme');
+    
+// Change theme based on slider
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+        document.body.classList.add('dark-theme');
+        document.body.classList.remove('light-theme');
     } else {
-        body.classList.remove('dark-theme');
-        body.classList.add('light-theme');
+        document.body.classList.add('light-theme');
+        document.body.classList.remove('dark-theme');
     }
-}
+});
 </script>
 
 </body>
