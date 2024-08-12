@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const text = `< Oliver's Dev Forge />`;
+    const text = `< Oliver's Repository />`;
 
     const typewriterElement = document.getElementById('typewriter');
     let index = 0;
