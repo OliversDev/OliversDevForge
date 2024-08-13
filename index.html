@@ -53,6 +53,19 @@ body {background-color: #000000;}
 .dark-theme {
     background-color: #121212;
     color: #ffffff;
+    .w3-theme-l5 {color:#000 !important; background-color:#edf7ff !important}
+    .w3-theme-l4 {color:#000 !important; background-color:#c4e5ff !important}
+    .w3-theme-l3 {color:#000 !important; background-color:#89ccff !important}
+    .w3-theme-l2 {color:#fff !important; background-color:#4eb2ff !important}
+    .w3-theme-l1 {color:#fff !important; background-color:#1298ff !important}
+    .w3-theme-d1 {color:#fff !important; background-color:#006dc1 !important}
+    .w3-theme-d2 {color:#fff !important; background-color:#0061ab !important}
+    .w3-theme-d3 {color:#fff !important; background-color:#005596 !important}
+    .w3-theme-d4 {color:#fff !important; background-color:#004981 !important}
+    .w3-theme-d5 {color:#fff !important; background-color:#003d6b !important}
+    .w3-theme-cd1 {color:#fff !important; background-color:#181818 !important}
+    .w3-theme-cd2 {color:#fff !important; background-color:#1F1F1F !important}
+    .w3-theme-cl1 {color:#000 !important; background-color:#edf7ff !important}
 }
 
 /* The switch - the box around the slider */
@@ -127,10 +140,14 @@ input:checked + .slider:before {
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Programs</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-    <label class="switch w3-padding-large">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider round"></span>
-    </label><a> Light/Dark Theme</a>
+    <!-- Theme Toggle -->
+    <div class="w3-bar-item theme-toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="w3-hide-small w3-padding-small">Light/Dark Theme</span>
+    </div>
   </div>
 
   <!-- Navbar on small screens -->
