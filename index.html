@@ -28,8 +28,8 @@ body {background-color: #000000;}
 .light-theme .w3-theme-d3 {color:#000 !important; background-color:#5eafff !important}
 .light-theme .w3-theme-d4 {color:#fff !important; background-color:#47a4ff !important}
 .light-theme .w3-theme-d5 {color:#fff !important; background-color:#3099ff !important}
-.light-theme .w3-theme-cd1 {color:#000 !important; background-color:#e6f4ff !important}
-.light-theme .w3-theme-cd2 {color:#000 !important; background-color:#d0eaff !important}
+.light-theme .w3-theme-cd1 {color:#000 !important; background-color:#999999 !important}
+.light-theme .w3-theme-cd2 {color:#000 !important; background-color:#C2C2C2 !important}
 .light-theme .w3-theme-cl1 {color:#000 !important; background-color:#f7fbff !important}
 .light-theme .w3-theme-light {color:#000 !important; background-color:#f7fbff !important}
 .light-theme .w3-theme-dark {color:#000 !important; background-color:#3099ff !important}
@@ -40,6 +40,7 @@ body {background-color: #000000;}
 .light-theme .w3-hover-theme:hover {color:#000 !important; background-color:#0078d4 !important}
 .light-theme .w3-hover-text-theme:hover {color:#0078d4 !important}
 .light-theme .w3-hover-border-theme:hover {border-color:#0078d4 !important}
+.light-theme .w3-theme-main,.w3-hover-theme-main:hover{color:#000!important;background-color:#f7fbff!important}
 
 /* Dark Theme */
 .dark-theme .w3-theme-l5 {color:#000 !important; background-color:#edf7ff !important}
@@ -64,6 +65,7 @@ body {background-color: #000000;}
 .dark-theme .w3-hover-theme:hover {color:#fff !important; background-color:#0078d4 !important}
 .dark-theme .w3-hover-text-theme:hover {color:#0078d4 !important}
 .dark-theme .w3-hover-border-theme:hover {border-color:#0078d4 !important}
+.dark-theme .w3-theme-main,.w3-hover-theme-main:hover{color:#fff!important;background-color:#000!important}
 
 /* Light theme styles */
 .light-theme {
@@ -144,11 +146,11 @@ input:checked + .slider:before {
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-theme" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Programs</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-theme-main w3-large w3-theme" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-main">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-theme-main">Programs</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-theme-main">About</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-theme-main">Contact</a>
     <!-- Theme Toggle -->
     <div class="w3-bar-item theme-toggle-container">
       <label class="switch">
@@ -160,7 +162,7 @@ input:checked + .slider:before {
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-large">
+  <div id="navDemo" class="w3-bar-block w3-theme-main w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Programs</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Contact</a>
@@ -174,7 +176,7 @@ input:checked + .slider:before {
 </header>
 
 <!-- First Grid -->
-<div class="w3-row-padding w3-black w3-padding-64 w3-container">
+<div class="w3-row-padding w3-theme-main w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
       <h1>Lorem Ipsum</h1>
@@ -214,7 +216,7 @@ input:checked + .slider:before {
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-black w3-padding-64 w3-center">  
+<footer class="w3-container w3-theme-main w3-padding-64 w3-center">  
   <div class="w3-xlarge w3-padding-32">
     <a href="https://ca.linkedin.com/in/oliverwackenreuther" target="_blank" style="text-decoration:none" <i class="fa fa-linkedin w3-text-theme w3-hover-opacity"></i></a>
  </div>
