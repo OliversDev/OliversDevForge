@@ -170,7 +170,7 @@ input:checked + .slider:before {
     <!-- Theme Toggle -->
     <div class="w3-hide-small w3-bar-item w3-padding-large theme-toggle-container">
       <label class="switch">
-        <input type="checkbox" id="theme-toggle">
+        <input type="checkbox" id="theme-toggle-desktop">
         <span class="slider round"></span>
       </label>
       <span class="w3-hide-small w3-padding-small">Light/Dark Theme</span>
@@ -184,7 +184,7 @@ input:checked + .slider:before {
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Contact</a>
     <div class="w3-bar-item w3-padding-large theme-toggle-container">
       <label class="switch">
-        <input type="checkbox" id="theme-toggle">
+        <input type="checkbox" id="theme-toggle-mobile">
         <span class="slider round"></span>
       </label>
       <span class="w3-padding-small">Light/Dark Theme</span>
@@ -259,25 +259,40 @@ function myFunction() {
     
 // Change theme based on slider
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleSwitch = document.getElementById('theme-toggle');
-  const currentTheme = localStorage.getItem('theme');
+    const desktopToggle = document.getElementById('theme-toggle-desktop');
+    const mobileToggle = document.getElementById('theme-toggle-mobile');
+    const currentTheme = localStorage.getItem('theme');
 
-  // Apply the stored theme if it exists
-  if (currentTheme) {
-    document.body.className = currentTheme;
-    toggleSwitch.checked = (currentTheme === 'dark-theme');
-  }
-
-  // Toggle the theme
-  toggleSwitch.addEventListener('change', () => {
-    if (toggleSwitch.checked) {
-      document.body.className = 'dark-theme';
-      localStorage.setItem('theme', 'dark-theme');
-    } else {
-      document.body.className = 'light-theme';
-      localStorage.setItem('theme', 'light-theme');
+    // Apply the stored theme if it exists
+    if (currentTheme) {
+        document.body.className = currentTheme;
+        desktopToggle.checked = (currentTheme === 'dark-theme');
+        mobileToggle.checked = (currentTheme === 'dark-theme');
     }
-  });
+
+    // Function to toggle the theme
+    const toggleTheme = (isDark) => {
+        if (isDark) {
+            document.body.className = 'dark-theme';
+            localStorage.setItem('theme', 'dark-theme');
+        } else {
+            document.body.className = 'light-theme';
+            localStorage.setItem('theme', 'light-theme');
+        }
+    };
+
+    // Add event listeners for both toggle switches
+    desktopToggle.addEventListener('change', () => {
+        const isDark = desktopToggle.checked;
+        mobileToggle.checked = isDark; // Sync mobile toggle
+        toggleTheme(isDark);
+    });
+
+    mobileToggle.addEventListener('change', () => {
+        const isDark = mobileToggle.checked;
+        desktopToggle.checked = isDark; // Sync desktop toggle
+        toggleTheme(isDark);
+    });
 });
 </script>
 
