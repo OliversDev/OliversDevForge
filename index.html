@@ -25,9 +25,9 @@
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-theme-main w3-large w3-theme" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-main">Home</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-main">Home</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-theme-main">Programs</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-theme-main">Resources</a>
+    <a href="resources.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-theme-main">Resources</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-theme-main">About</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-theme-main">Contact</a>
     <!-- Theme Toggle -->
@@ -43,7 +43,7 @@
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-theme-main w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Programs</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Resources</a>
+    <a href="resources.html" class="w3-bar-item w3-button w3-padding-large">Resources</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Contact</a>
     <div class="w3-bar-item w3-padding-large theme-toggle-container">
@@ -110,55 +110,8 @@
  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 </footer>
 
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-    
-// Change theme based on slider
-document.addEventListener('DOMContentLoaded', () => {
-    const desktopToggle = document.getElementById('theme-toggle-desktop');
-    const mobileToggle = document.getElementById('theme-toggle-mobile');
-    const currentTheme = localStorage.getItem('theme');
-
-    // Apply the stored theme if it exists
-    if (currentTheme) {
-        document.body.className = currentTheme;
-        desktopToggle.checked = (currentTheme === 'dark-theme');
-        mobileToggle.checked = (currentTheme === 'dark-theme');
-    }
-
-    // Function to toggle the theme
-    const toggleTheme = (isDark) => {
-        if (isDark) {
-            document.body.className = 'dark-theme';
-            localStorage.setItem('theme', 'dark-theme');
-        } else {
-            document.body.className = 'light-theme';
-            localStorage.setItem('theme', 'light-theme');
-        }
-    };
-
-    // Add event listeners for both toggle switches
-    desktopToggle.addEventListener('change', () => {
-        const isDark = desktopToggle.checked;
-        mobileToggle.checked = isDark; // Sync mobile toggle
-        toggleTheme(isDark);
-    });
-
-    mobileToggle.addEventListener('change', () => {
-        const isDark = mobileToggle.checked;
-        desktopToggle.checked = isDark; // Sync desktop toggle
-        toggleTheme(isDark);
-    });
-});
-</script>
+<script src="navbar.js"></script>
+<script src="theme.js"></script>
 
 </body>
 </html>
